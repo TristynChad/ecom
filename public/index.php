@@ -19,7 +19,8 @@ post('/registration', 'app/Controllers/Registration.php');
 get('/login', 'app/Controllers/Login.php');
 post('/login', 'app/Controllers/Login.php');
 
-
+get('/store', 'app/Controllers/Store.php');
+post('/store', 'app/Controllers/Store.php');
 
 
 
