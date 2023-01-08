@@ -25,7 +25,8 @@ post('/store', 'app/Controllers/Store.php');
 get('/details/$id', 'app/Controllers/Details.php');
 post('/details/$id', 'app/Controllers/Details.php');
 
-
+get('/cart', 'app/Controllers/Cart.php');
+post('/cart', 'app/Controllers/Cart.php');
 
 
 

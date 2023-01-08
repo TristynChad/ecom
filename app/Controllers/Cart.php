@@ -6,6 +6,8 @@ require_once APP_DIR . "Config/Database.php";
 require_once APP_DIR . "Models/User.php";
 require_once APP_DIR . "Models/Product.php";
 require_once APP_DIR . "Models/Cart.php";
+require_once APP_DIR . "Utils/code.isLoggedIn.php";
+
 
 //create objects
 $db_object = new Database();
@@ -15,14 +17,14 @@ $cart_object = new Cart($db_object);
 
 if(isset($_POST["add_to_cart"])){
     echo "You clicked a button";
-    require_once APP_DIR . "Utils/code.isLoggedIn.php";
+    
     $cart_object->addToCart($user_id, $id, $_POST["cart_quantity"]);
     $_SESSION["message"] = "Product successfully added to cart";
     //header("location:" . BASE_URL . "cart");
     //$user_object->login($_POST);
 }
 
-$product_details = $product_object->getProductDetails($id);
+$cart_details = $cart_object->getCartDetails($user_id);
 
 
 
@@ -33,5 +35,5 @@ foreach ($product_details as $data) {
 //load views 
 require_once APP_DIR . "Views/header.php";
 require_once APP_DIR . "Views/includes/alerts.php";
-require_once APP_DIR . "Views/pages/details.php";
+require_once APP_DIR . "Views/pages/cart.php";
 require_once APP_DIR . "Views/footer.php";
