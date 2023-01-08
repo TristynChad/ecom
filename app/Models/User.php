@@ -67,13 +67,13 @@ class User
 
 
 
-            echo "Successfully logged in";
+            $_SESSION["message"] = "Successfully logged in";
             $user["password"] = null; 
             $_SESSION["current_user"] = $user;   
 
             return true;
         } else {
-            echo "Incorrect login details";
+            $_SESSION["message"] = "Incorrect login details";
         }
 
         return false;

@@ -14,7 +14,18 @@ $user_object = new User($db_object);
 
 if(isset($_POST["login"])){
     echo "You clicked a button";
-    $user_object->login($_POST);
+
+    if($user_object->login($_POST)){
+        $_SESSION["message"] = "Login was succesful";
+        header("location: store");
+        exit;
+    }else{
+        $_SESSION["message"] = "Invalid Credentials";
+    }
+
+
+
+    
 }
 
 

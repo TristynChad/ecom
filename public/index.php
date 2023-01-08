@@ -22,6 +22,9 @@ post('/login', 'app/Controllers/Login.php');
 get('/store', 'app/Controllers/Store.php');
 post('/store', 'app/Controllers/Store.php');
 
+get('/details/$id', 'app/Controllers/Details.php');
+post('/details/$id', 'app/Controllers/Details.php');
+
 
 
 
