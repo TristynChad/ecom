@@ -141,8 +141,8 @@
 	 	<section class="shopping-cart dark">
 	 		<div class="container">
 		        <div class="block-heading">
-		          <h2>Shopping Cart</h2>
-		          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+		          <h2>Checkout</h2>
+		          <p>Thank you for doing business with us!</p>
 		        </div>
 		        <div class="content">
 	 				<div class="row">
@@ -210,10 +210,7 @@
 			 					<div class="summary-item"><span class="text">Discount</span><span class="price">$0</span></div>
 			 					<div class="summary-item"><span class="text">Shipping</span><span class="price">$0</span></div>
 			 					<div class="summary-item"><span class="text">Total</span><span class="price">$<?php echo $cart_object->getTotal(); ?></span></div>
-			 					
-								<div class="d-grid">
-									<a class="btn btn-primary btn-lg btn-block" href="checkout">Checkout</a>
-								</div>
+			 					<button type="button" class="btn btn-primary btn-lg btn-block">Checkout</button>
 				 			</div>
 			 			</div>
 		 			</div> 

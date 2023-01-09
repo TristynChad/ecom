@@ -28,7 +28,7 @@ class Cart
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($result as $product) {
-            $this->subtotal = $product["product_price"] * $product["cart_quantity"];
+            $this->subtotal += $product["product_price"] * $product["cart_quantity"];
         }
 
         $this->cart_details = $result;
@@ -66,13 +66,28 @@ class Cart
 
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($data);
-
-
     }   
 
+    public function removeFromCart($cart_id, $user_id){
+        $sql = "DELETE FROM cart WHERE cart_id = ? AND user_id = ?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$cart_id, $user_id]);
+    }
 
+    public function getSubtotal()
+    {
+        return $this->subtotal;
+    }
 
+   public function getTotal()
+   {
+        return $this->total;
+    } 
 
+    public function calculateTotal()
+    {
+        $this->total = $this->subtotal;
+    }
 
 
 }
