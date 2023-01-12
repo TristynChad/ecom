@@ -54,16 +54,49 @@ class Order
 
         foreach ($cart_details as $data) {
             
+            array_push($insert_data, [
+                "order_id" => $order_id,
+                "product_id" => $data["product_id"],
+                "order_details_price" => $data["product_price"],
+                "order_details_quantity" => $data["cart_quantity"]
+            ]);
+
             array_push($update_data, [
                 "cart_id" => $data["cart_id"]
             ]);
         }
 
+        $this->multiInsert($insert_data);
         $this->multiUpdate($update_data);
     }
 
-    public function multiInsert()
-    {   
+    public function multiInsert($data)
+    {
+    
+
+        $sql = "INSERT INTO `order_details`
+        (`order_details_id`,
+        `order_id`,
+        `product_id`,
+        `order_details_price`,
+        `order_details_quantity`,
+        `order_details_created`)
+        VALUES
+        (
+        NULL,
+        :order_id,
+        :product_id,
+        :order_details_price,
+        :order_details_quantity,
+        current_timestamp()
+        );
+        
+        ";
+
+        $stmt = $this->pdo->prepare($sql);
+        foreach($data as $array){
+            $stmt->execute($array);
+        }
     }
 
 

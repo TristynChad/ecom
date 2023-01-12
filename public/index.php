@@ -19,6 +19,9 @@ post('/registration', 'app/Controllers/Registration.php');
 get('/login', 'app/Controllers/Login.php');
 post('/login', 'app/Controllers/Login.php');
 
+get('/logout', 'app/Controllers/Logout.php');
+post('/logout', 'app/Controllers/Logout.php');
+
 get('/store', 'app/Controllers/Store.php');
 post('/store', 'app/Controllers/Store.php');
 
@@ -36,6 +39,9 @@ post('/checkout/stripe', 'app/Controllers/Checkout-stripe.php');
 
 get('/checkout/success/$payment/$id', 'app/Controllers/Checkout-success.php');
 post('/checkout/success/$payment/$id', 'app/Controllers/Checkout-success.php');
+
+get('/thanks', 'app/Controllers/Thanks.php');
+post('/thanks', 'app/Controllers/Thanks.php');
 
 
 // ##################################################

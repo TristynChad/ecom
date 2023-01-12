@@ -18,7 +18,8 @@ if(isset($_POST["add_to_cart"])){
     require_once APP_DIR . "Utils/code.isLoggedIn.php";
     $cart_object->addToCart($user_id, $id, $_POST["cart_quantity"]);
     $_SESSION["message"] = "Product successfully added to cart";
-    //header("location:" . BASE_URL . "cart");
+    header("location:" . BASE_URL . "cart");
+    exit;
     //$user_object->login($_POST);
 }
 

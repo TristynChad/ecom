@@ -22,13 +22,22 @@
     <div class="collapse navbar-collapse" id="mynavbar">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">Link</a>
+          <a class="nav-link" href="<?php echo BASE_URL . "home"; ?>">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">Link</a>
+          <a class="nav-link" href="<?php echo BASE_URL; ?>store">Store</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">Link</a>
+          <a class="nav-link" href="<?php echo BASE_URL . "cart"; ?>">Cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo BASE_URL . "login"; ?>">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo BASE_URL . "registration"; ?>">Registration</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo BASE_URL . "logout"; ?>">Logout</a>
         </li>
       </ul>
       <form class="d-flex">

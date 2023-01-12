@@ -20,16 +20,25 @@ $cart_object->calculateTotal();
 switch ($payment) {
     case 'debug':
         $data = [
-        "payment" => "none",
-        "payment_id" => "none",
-        "subtotal" => $cart_object->getSubtotal(),
-        "total" => $cart_object->getTotal(),
-        "total_discount_amount" => 0
+            "payment" => "none",
+            "payment_id" => "none",
+            "subtotal" => $cart_object->getSubtotal(),
+            "total" => $cart_object->getTotal(),
+            "total_discount_amount" => 0
         ];
         
         $completed = true;
         break; 
     
+    case 'stripe':
+
+        $checkout_order = $payment_object->getCheckoutOrder($id);
+        //Debugger::debug($checkout_order);
+        $completed = $payment_object->isCheckoutCompleted($checkout_order);
+        $data = $payment_object->getPaymentDetails($checkout_order);    
+
+        break;
+
     default:
         # code...
         break;
@@ -49,3 +58,7 @@ $order_id = $order_object->insertOrder($data);
 
 //insert order details
 $order_object->insertOrderDetails($cart_details, $user_id);
+
+//redirect user to thanks page
+header("location: " . BASE_URL . "thanks" );
+exit;

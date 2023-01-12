@@ -22,15 +22,11 @@ if(isset($_POST["login"])){
     }else{
         $_SESSION["message"] = "Invalid Credentials";
     }
-
-
-
-    
+ 
 }
-
 
 //load views 
 require_once APP_DIR . "Views/header.php";
 require_once APP_DIR . "Views/includes/alerts.php";
-require_once APP_DIR . "Views/pages/login.php";
+require_once APP_DIR . "Views/pages/login1.php";
 require_once APP_DIR . "Views/footer.php";

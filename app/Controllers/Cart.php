@@ -4,7 +4,7 @@ require_once APP_DIR . "Utils/code.precheckout.php";
 
 
 if(isset($_POST["remove_from_cart"])){
-    echo "You clicked a button";
+    //echo "You clicked a button";
     
     $cart_object->removeFromCart($_POST["cart_id"], $user_id);
     $_SESSION["message"] = "Product removed from cart";
@@ -22,7 +22,7 @@ require_once APP_DIR . "Views/header.php";
 require_once APP_DIR . "Views/includes/alerts.php";
 
 if(empty($cart_details)){
-    echo "Cart is empty";
+    require_once APP_DIR . "Views/includes/cart-empty.php";
 }else{
     require_once APP_DIR . "Views/pages/cart.php";
 }
