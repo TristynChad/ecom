@@ -9,7 +9,7 @@ if(isset($_SESSION["message"])){
 
     <div class="container">
         <div class="alert alert-success">
-            <strong>Success!</strong> <?php echo $message; ?>
+            <strong>Alert!</strong> <?php echo $message; ?>
         </div>
     </div>
 
