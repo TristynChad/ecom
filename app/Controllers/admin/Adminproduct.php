@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             new Customimage("product_image4", 0, $_POST["previous_product_image4"])
         ];
         if(startValidations($images)){
-            exit;
+            // exit;
             if(startUpload($images)){
                 $product_object ->updateProduct($id, $_POST, $images);
             }else{

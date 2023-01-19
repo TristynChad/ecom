@@ -111,7 +111,7 @@ function upload($full_path, $old_name, $new_name)
     $full_name = $full_path . $new_name;
         if (move_uploaded_file($_FILES[$old_name]["tmp_name"], $full_name)) {
             echo "The file uploaded " . $full_name;
-            echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+            //echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
         } else {
         echo "Sorry, there was an error uploading your file.";
         return false;

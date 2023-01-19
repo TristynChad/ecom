@@ -77,7 +77,21 @@ class User
         }
 
         return false;
-        }    
+        }  
+        
+        
+        public function doesEmailExist($email){
+
+        $sql = "SELECT * FROM users where email = ?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$email]); 
+        $user = $stmt->fetch();
+        if ($user) {
+            // email found
+            return true;
+        } 
+        return false;
+    }
 
 
 

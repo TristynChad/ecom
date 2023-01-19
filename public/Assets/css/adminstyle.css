@@ -1,0 +1,62 @@
+      /* Custom CSS */
+
+      /* 
+        F6F5F5 - sidebar (white)
+        8382A0 - background (light purple)
+        211C37 - text color (dark blue)
+        5B709B - text highlighed (navy blue)
+        */
+
+
+      /* CSS Variables */
+      :root {
+          --theme-color: #211C37;
+          --admin-bg: #dddde3;
+          --admin-sidebar-bg: rgb(17, 17, 17);
+          --admin-font: 'Public Sans', sans-serif;
+          --admin-font-color: #211C37;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+          text-transform: uppercase;
+      }
+
+      /* Theme color - For highlighting certain elements */
+      .theme {
+          color: var(--theme-color) !important;
+      }
+
+      /* Background and font color for body / all*/
+      body {
+          background-color: var(--admin-bg);
+          color: var(--admin-font-color) !important;
+          font-family: var(--admin-font);
+          line-height: 1.5em;
+      }
+
+      /* Change background color of sidebar */
+      #sidebar-wrapper {
+          background-color: var(--admin-sidebar-bg) !important;
+      }
+
+      .sidebar-nav li a {
+          color: black;
+          padding-left: 10%;
+      }
+
+
+      .sidebar-nav li a:hover {
+          text-decoration: none;
+          color: #fff;
+          background: #5B709B;
+      }
+
+      /* Dashboard content font */
+      #page-content-wrapper {
+          font-family: 'Public Sans', sans-serif;
+          font-weight: 300;
+      }
