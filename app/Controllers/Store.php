@@ -18,12 +18,27 @@ $product_object = new Product($db_object);
 //     $user_object->login($_POST);
 // }
 
-$product_details = $product_object->getAllProducts();
+
+//debug($_GET);
+
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    if (!empty($_GET)) {
+        $product_details = $product_object->filterProducts($_GET);
+    } else {
+        $product_details = $product_object->getAllProducts();
+    }
+}
 
 
 
 //load views 
 require_once APP_DIR . "Views/header.php";
 require_once APP_DIR . "Views/includes/alerts.php";
+if(empty($product_details)) {
+    require_once APP_DIR . "Views/includes/store-no-results.php";
+}else{
+    require_once APP_DIR . "Views/pages/store1.php";
+}
+require_once APP_DIR . "Views/includes/store-filter.php";
 require_once APP_DIR . "Views/pages/store1.php";
 require_once APP_DIR . "Views/footer.php";
